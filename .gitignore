@@ -38,5 +38,5 @@ testem.log
 .DS_Store
 Thumbs.db
 
-#Evitar Vul
+#Evitar Vulnerabilidade 
 package-lock.json
