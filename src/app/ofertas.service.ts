@@ -11,6 +11,12 @@ export class OfertasServices {
     public async getOfertas(){
         return this.http.get('http://localhost:3000/ofertas?destaque=true')
             .toPromise()
-            .then((resp) =>  resp.json());
+            .then(resp =>  resp.json());
+    }
+
+    public getOfertasPoCategoria(categoria: string): Promise<Oferta[]> {
+        return this.http.get(`http://localhost:3000/ofertas?categoria=${categoria}`)
+                 .toPromise()
+                 .then(resp => resp.json());
     }
 }
