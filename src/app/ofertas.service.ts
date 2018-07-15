@@ -24,4 +24,5 @@ export class OfertasServices {
     public getOfertaPorId(id: number): Promise<Oferta>{
         return this.http.get(`${URL_API}?id=${id}`).toPromise().then((resp) => resp.json().shift()); 
     }
+    
 }
