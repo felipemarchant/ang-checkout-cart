@@ -2,7 +2,9 @@ import { Oferta } from './shared/ofertas.model';
 import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
 import { URL_API } from './app.api';
-import 'rxjs';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
 
 @Injectable()
 export class OfertasServices {
@@ -26,7 +28,12 @@ export class OfertasServices {
     }
 
     public getComoUsarOfertaPorId(id: number): Promise<string>{
-        return this.http.get(`${URL_API}/como-usar?id=${id}`).toPromise().then(resp => resp.json().shift().descricao)
+        return this.http.get(`${URL_API}/como-usar?id=${id}`).toPromise().then( resp => resp.json().shift().descricao )
+    }
+
+    public pesquisaOfertas(termo: string ) : Observable<Oferta[]>{
+        return this.http.get(`${URL_API}/ofertas?descricao_oferta=${termo}`).map( resp => resp.json());
+        )
     }
     
 }
