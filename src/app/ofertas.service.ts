@@ -31,8 +31,8 @@ export class OfertasServices {
         return this.http.get(`${URL_API}/como-usar?id=${id}`).toPromise().then( resp => resp.json().shift().descricao )
     }
 
-    public pesquisaOfertas(termo: string ) : Promise<Oferta[]>{
-        return this.http.get(`${URL_API}/ofertas?descricao_oferta_like=${termo}`).toPromise().then(resp => resp.json());
+    public pesquisaOfertas(termo: string): Observable<Oferta[]>{
+        return this.http.get(`${URL_API}/ofertas?descricao_oferta_like=${termo}`).pipe(map((res: Oferta)=> console.log(res)))
     }
     
 }
