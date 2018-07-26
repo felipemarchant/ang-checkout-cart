@@ -3,7 +3,7 @@ import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
 import { URL_API } from './app.api';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, retry } from 'rxjs/operators';
 
 
 @Injectable()
@@ -32,7 +32,10 @@ export class OfertasServices {
     }
 
     public pesquisaOfertas(termo: string): Observable<Oferta[]>{
-        return this.http.get(`${URL_API}/ofertas?descricao_oferta_like=${termo}`).pipe(map((res: Oferta)=> console.log(res)))
+        return this.http.get(`${URL_API}/ofertas?descricao_oferta_like=${termo}`).pipe(
+            retry(10),
+            map((res) => res.json() )
+        );
     }
     
 }
