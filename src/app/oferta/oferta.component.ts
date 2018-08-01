@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { OfertasServices } from '../ofertas.service';
 import { Oferta } from '../shared/ofertas.model';
 
@@ -18,7 +18,10 @@ export class OfertaComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.ofertasServices.getOfertaPorId(this.route.snapshot.params['id']).then((oferta:Oferta) => this.oferta = oferta);
+
+    this.route.params.subscribe((parametros:Params) => {
+      this.ofertasServices.getOfertaPorId(parametros.id).then((oferta:Oferta) => this.oferta = oferta);
+    });
   }
 
 }
