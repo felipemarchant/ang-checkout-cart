@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
 
-import { HomeComponent } from '../app/home/home.component';
-import { RestauranteComponent } from '../app/restaurante/restaurante.component';
-import { DiversaoComponent } from '../app/diversao/diversao.component';
-import { OfertaComponent } from '../app/oferta/oferta.component';
+import { HomeComponent } from './home/home.component';
+import { RestauranteComponent } from './restaurante/restaurante.component';
+import { DiversaoComponent } from './diversao/diversao.component';
+import { OfertaComponent } from './oferta/oferta.component';
 import { ComoUsarComponent } from './oferta/como-usar/como-usar.component';
 import { OndeFicaComponent } from './oferta/onde-fica/onde-fica.component';
 import { OrdemCompraComponent } from './ordem-compra/ordem-compra.component';
