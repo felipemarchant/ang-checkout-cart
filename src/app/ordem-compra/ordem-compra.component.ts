@@ -10,6 +10,7 @@ import { Pedido } from '../shared/pedido.model';
 })
 export class OrdemCompraComponent implements OnInit {
 
+  public idPedidoCompra:number;
   public pedido: Pedido = new Pedido('','','','');
 
   public endereco: string = '';
@@ -36,7 +37,6 @@ export class OrdemCompraComponent implements OnInit {
     }else{
       this.enderecoValido = false;
     }
-    console.log(endereco);
   }
   public atualizarNumero(numero:string){
     this.numero = numero;
@@ -46,11 +46,9 @@ export class OrdemCompraComponent implements OnInit {
     } else {
       this.numeroValido = false;
     }
-    console.log(numero);
   }
   public atualizarComplemento(complemento:string){
     this.complemento = complemento;
-    console.log(complemento);
   }
   public atualizarFormaPagamento(formaPagamento:string){
     this.formaPagamento = formaPagamento;
@@ -59,7 +57,6 @@ export class OrdemCompraComponent implements OnInit {
     } else {
       this.formaPagamentoValido = false;
     }
-    console.log(formaPagamento);
   }
   public confirmarCompra():void{
 
@@ -68,7 +65,7 @@ export class OrdemCompraComponent implements OnInit {
     this.pedido.complemento = this.complemento;
     this.pedido.formaPagamento = this.formaPagamento;
 
-    this.orderCompraService.efetivarCompra(this.pedido).subscribe((resp) => console.log(resp));
+    this.orderCompraService.efetivarCompra(this.pedido).subscribe((idPedido:number) => this.idPedidoCompra = idPedido; );
   }
 
 }

@@ -187,6 +187,13 @@
       "complemento": "8",
       "formaPagamento": "Dinheiro",
       "id": 4
+    },
+    {
+      "endereco": "R. Araruna",
+      "numero": "75",
+      "complemento": "Bom Clima",
+      "formaPagamento": "Dinheiro",
+      "id": 5
     }
   ]
 }

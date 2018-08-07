@@ -20,6 +20,6 @@ export class OrdemCompraService
             `${URL_API}/pedidos`,
             JSON.stringify(pedido),
             new RequestOptions({ headers: headers })
-        ).pipe(map((resp) => resp.json()))
+        ).pipe(map((resp) => resp.json().id))
     }
 }
