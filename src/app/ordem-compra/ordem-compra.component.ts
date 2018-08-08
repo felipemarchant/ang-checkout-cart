@@ -14,7 +14,7 @@ export class OrdemCompraComponent implements OnInit {
   public idPedidoCompra: number;
   public formulario: FormGroup = new FormGroup({
     'endereco': new FormControl(null, [ Validators.required, Validators.minLength(3), Validators.maxLength(120) ]),
-    'numero': new FormControl(null, [Validators.required, Validators.minLength(1), Validators.maxLength(20) ),
+    'numero': new FormControl(null, [Validators.required, Validators.minLength(1), Validators.maxLength(20) ]),
     'complemento': new FormControl(null),
     'formaPagamento': new FormControl(null, [Validators.required])
   })
