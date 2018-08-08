@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
+
 
 @Component({
   selector: 'app-ordem-compra-sucesso',
@@ -8,10 +9,10 @@ import { Component, OnInit, Input } from '@angular/core';
 export class OrdemCompraSucessoComponent implements OnInit {
 
   @Input() public idPedidoCompra: number;
-
   constructor() { }
 
   ngOnInit() {
   }
 
+  
 }
