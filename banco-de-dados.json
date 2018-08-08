@@ -215,6 +215,20 @@
       "complemento": "aa",
       "formaPagamento": "dinheiro",
       "id": 8
+    },
+    {
+      "endereco": "felipe",
+      "numero": "75",
+      "complemento": null,
+      "formaPagamento": "debito",
+      "id": 9
+    },
+    {
+      "endereco": "CCCC",
+      "numero": "15",
+      "complemento": null,
+      "formaPagamento": "dinheiro",
+      "id": 10
     }
   ]
 }
