@@ -45,7 +45,7 @@ import { CarrinhoService } from './carrinho.service';
     RouterModule.forRoot(ROUTES),
     ReactiveFormsModule
   ],
-  providers: [ { provide: CarrinhoService, useValue : CarrinhoService } ],
+  providers: [ CarrinhoService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
